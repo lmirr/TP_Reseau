@@ -403,6 +403,23 @@ Une fois que le serveur DHCP vous a donné une IP, vous enregistrer un fichier a
 
 > Chez vous, c'est votre box qui fait serveur DHCP et qui vous donne une IP quand vous le demandez.
 
+```
+[lmirr@Rogue /]$ cat /var/lib/dhclient/dhclient.leases
+lease {
+  interface "wlan0";
+  fixed-address 10.33.16.122;
+  option subnet-mask 255.255.252.0;
+  option routers 10.33.19.254;
+  option dhcp-lease-time 86400;
+  option dhcp-message-type 5;
+  option domain-name-servers 8.8.8.8,8.8.4.4,1.1.1.1;
+  option dhcp-server-identifier 10.33.19.254;
+  renew 3 2022/10/05 19:22:58;
+  rebind 4 2022/10/06 04:40:49;
+  expire 4 2022/10/06 07:40:49;
+}
+```
+
 ## 2. DNS
 
 Le protocole DNS permet la résolution de noms de domaine vers des adresses IP. Ce protocole permet d'aller sur `google.com` plutôt que de devoir connaître et utiliser l'adresse IP du serveur de Google.  
@@ -419,12 +436,18 @@ Si votre navigateur fonctionne "normalement" (il vous permet d'aller sur `google
   - pour `google.com`
   - pour `ynov.com`
   - interpréter les résultats de ces commandes
+
+ynov a 3 addresses ip hebergées par cloudfare, google en a une, hébergé par lui-meme.
+
 - déterminer l'adresse IP du serveur à qui vous venez d'effectuer ces requêtes
 - faites un *reverse lookup* (= "dis moi si tu connais un nom de domaine pour telle IP")
   - pour l'adresse `78.73.21.21`
   - pour l'adresse `22.146.54.58`
   - interpréter les résultats
   - *si vous vous demandez, j'ai pris des adresses random :)*
+
+Il y a une addresse avec un port dns avec une reponse a ma question.
+Pour l'autre il m'y a pas de reponse ca veut dire que l'adresse n'est pas setup pour repondre en dns.
 
 # IV. Wireshark
 
