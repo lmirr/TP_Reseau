@@ -183,6 +183,12 @@ se rendre compte que c'est reapparu:
   - déterminez, pour les deux trames, les adresses source et destination
   - déterminez à quoi correspond chacune de ces adresses
 
+les deux premieres trames de l'envoyeur a tout le monde sur le reseau qui demande qui a l'addresse 192.168.56.101(celle du destinataire) et de lui envoyer la reponse, puis du destinataire qui envoie son addresse mac a l'envoyeur.
+
+on observe deux autres trames du destinataire qui demande qui a l'addresse 192.168.56.1(l'envoyeur) a l'addresse mac de l'envoyeur, qui lui repond qu'elle est bien a l'addresse mac donnée.
+
+on a eu un echange d'addresse pour que les deux puissent stocker l'addresse mac de l'autre et s'en souvenir
+
 🦈 **PCAP qui contient les trames ARP**
 
 > L'échange ARP est constitué de deux trames : un ARP broadcast et un ARP reply.
