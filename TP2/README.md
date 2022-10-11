@@ -111,6 +111,8 @@ rtt min/avg/max/mdev = 0.108/0.204/0.254/0.068 ms
 
 > Vous trouverez sur [la page Wikipedia de ICMP](https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol) un tableau qui répertorie tous les types ICMP et leur utilité
 
+[pings](wireshark/pings.pcapng)
+
 on voit des echo request envoyés depuis la vm (type 8)
 et des echo reply envoyés depuis l'ordinateur (type 0)
 
@@ -163,7 +165,7 @@ pour se rendre compte des dégats:
 arp
 ```
 se rendre compte qu'elle est vide:
-![Alt text](relative/path/to/img.jpg?raw=true "where_arp")
+![pikachu](pics/where_arp_mokey.jpg?raw=true "where_arp")
 
 toujours depuis le pc:
 ```
@@ -171,8 +173,8 @@ ping 192.168.56.101
 ^C
 arp
 ```
-se rendre compte que c'est reapparu:
-![Alt text](relative/path/to/img.jpg?raw=true "pikachu")
+se rendre compte qu'elle est reapparue:
+![Alt text](pics/pikachu_omg.jpg?raw=true "pikachu")
 
 > Les échanges ARP sont effectuées automatiquement par votre machine lorsqu'elle essaie de joindre une machine sur le même LAN qu'elle. Si la MAC du destinataire n'est pas déjà dans la table ARP, alors un échange ARP sera déclenché.
 
@@ -182,6 +184,8 @@ se rendre compte que c'est reapparu:
 - mettez en évidence les deux trames ARP échangées lorsque vous essayez de contacter quelqu'un pour la "première" fois
   - déterminez, pour les deux trames, les adresses source et destination
   - déterminez à quoi correspond chacune de ces adresses
+
+[arp](wireshark/arp.pcapng)
 
 les deux premieres trames de l'envoyeur a tout le monde sur le reseau qui demande qui a l'addresse 192.168.56.101(celle du destinataire) et de lui envoyer la reponse, puis du destinataire qui envoie son addresse mac a l'envoyeur.
 
